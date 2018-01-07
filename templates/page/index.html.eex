@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
+  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+</div>
+
+<%= if @current_user do %>
+    <h2>Welcome, <%= @current_user.id%>!</h2>
+    <%= button "Logout", to: auth_path(@conn, :delete), method: :delete, class: "btn btn-danger" %>
+    <br>
+<% end %>
